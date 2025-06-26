@@ -9,5 +9,8 @@
     "test": "no test"
   },
   "author": "Roshan",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
