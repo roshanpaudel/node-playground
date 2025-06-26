@@ -1,5 +1,6 @@
 import { EventEmitter } from "node:events";
 import askUser from "./user.js";
+import express from "express";
 
 class MyEmitter extends EventEmitter {}
 
@@ -19,3 +20,12 @@ myEmitter.on("Hi", (name) => {
 myEmitter.emit("event");
 myEmitter.emit("intro", "Roshan");
 myEmitter.emit("Hi", "Roshan");
+
+const app = new express();
+app.listen(8000, (error) => {
+  error ? console.log(error) : console.log("http://localhost:8000");
+});
+
+app.use("/",(req, res)=>{
+res.send("Hello here is response")
+})
